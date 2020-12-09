@@ -1,0 +1,204 @@
+$c-grey: #f8f8f8;
+$c-light: #dddddd;
+$c-text: #333333;
+$c-dark: #202020;
+$c-red: #ef4642;
+$transition: .123s ease-in;
+$tight: 600px;
+
+body {
+  background-color: $c-grey;
+  font-family: "proxima nova", arial, sans-serif;
+  color: $c-text;
+}
+
+.c-col {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 0;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  &-outline {
+    border: 1px solid $c-dark;
+  }
+}
+
+.loose {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tight {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+hr {
+  margin: 64px 0;
+}
+
+.logo {
+  svg {
+    width: 200px;
+  }
+}
+
+.header {
+  margin-top: 32px;
+}
+
+.nav {
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    float: left;
+    list-style: none;
+    &:not(:first-child) {
+      margin-left: 32px;
+    }
+    &:last-child {
+      margin-left: 16px;
+    }
+  }
+
+  a {
+    display: block;
+    color: $c-text;
+    text-decoration: none;
+
+    &.btn-danger {
+      color: white;
+    }
+  }
+}
+
+.btn {
+  &-danger {
+    background-color: $c-red;
+  }
+}
+
+.masthead {
+
+  background-image: url('./images/masthead-bg.png');
+  background-position: center;
+  background-size: $tight + 160;
+  background-repeat: no-repeat;
+
+  padding-top: 128px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 16px;
+    h2 {
+      font-size: 2.3em;
+      font-weight: bold;
+    }
+  }
+
+  &__search {
+    input {
+      width: 100%;
+      background-image: url('./images/magnifying-glass.png');
+      background-position: 6px 8px;
+      background-repeat: no-repeat;
+      text-indent: 35px;
+      padding: 8px;
+      border: 1px solid $c-light;
+      transition: $transition;
+
+      &:focus {
+        outline: 0;
+        border: 1px solid $c-dark;
+      }
+
+    }
+  }
+
+  &__note {
+    text-align: center;
+    margin: 70px 0 40px;
+  }
+}
+
+
+.boxes {
+  display: grid;
+  grid-gap: 16px;
+  &--dual {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--quad {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .box {
+      min-height: 300px;
+    }
+  }
+
+
+  .box {
+    background-color: white;
+    padding: 32px;
+    color: $c-text;
+    text-decoration: none;
+    position: relative;
+
+    &__title * {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    &__icon {
+      width: 30px;
+      margin-bottom: 24px;
+      min-height: 35px;
+      svg {
+        fill: white;
+      }
+    }
+
+    &__text {
+      font-size: .9em;
+      margin-top: 16px;
+    }
+
+    &__link {
+      bottom: 32px;
+      position: absolute;
+    }
+
+    &:hover {
+      background-color: $c-dark;
+      color: white;
+      transition: $transition;
+
+      svg {
+        // fill: white;
+
+        .dark--fill {
+          fill: $c-red;
+        }
+        .dark--stroke {
+          stroke: $c-red;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
