@@ -7,9 +7,18 @@ $transition: .123s ease-in;
 $tight: 600px;
 
 body {
-  background-color: $c-grey;
   font-family: "proxima nova", arial, sans-serif;
   color: $c-text;
+}
+
+.outer {
+  &.grey {
+    background-color: $c-grey;
+  }
+}
+
+h2 {
+  font-weight: bold;
 }
 
 .c-col {
@@ -24,6 +33,13 @@ body {
 
   &-outline {
     border: 1px solid $c-dark;
+  }
+  &-danger {
+    background-color: $c-red;
+  }
+  &-big {
+    border-width: 2px;
+    padding: 16px 44px;
   }
 }
 
@@ -43,7 +59,12 @@ body {
 }
 
 hr {
-  margin: 64px 0;
+  margin: 0;
+  background-color: #989898;
+}
+
+.hr {
+  padding: 90px 0;
 }
 
 .logo {
@@ -53,7 +74,7 @@ hr {
 }
 
 .header {
-  margin-top: 32px;
+  padding-top: 32px;
 }
 
 .nav {
@@ -83,16 +104,16 @@ hr {
   }
 }
 
-.btn {
-  &-danger {
-    background-color: $c-red;
+.truck {
+  &__title {
+    margin-bottom: 64px;
   }
 }
 
 .masthead {
 
   background-image: url('./images/masthead-bg.png');
-  background-position: center;
+  background-position: center 150px;
   background-size: $tight + 160;
   background-repeat: no-repeat;
 
@@ -148,6 +169,25 @@ hr {
     }
   }
 
+  &--solo {
+    .box {
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: white !important;
+        color: $c-text !important;
+        transition: $transition;
+      }
+      &__link {
+        bottom: 0 !important;
+        position: relative !important;
+      }
+    }
+  }
+
 
   .box {
     background-color: white;
@@ -200,6 +240,27 @@ hr {
 
     p {
       margin-bottom: 0;
+    }
+  }
+}
+
+
+.footer {
+  &__top {
+    padding: 150px 0;
+  }
+
+  &__socials {
+    margin-top: 64px;
+    a {
+      display: flex;
+      align-items: center;
+      color: $c-text;
+      text-decoration: none;
+    }
+    svg {
+      width: 25px;
+      margin-right: 8px;
     }
   }
 }
