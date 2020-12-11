@@ -123,15 +123,15 @@ hr {
 .masthead {
 
   background-image: url('./images/masthead-bg.png');
-  background-position: center 150px;
-  background-size: $tight + 160;
+  background-position: center 80px;
+  background-size: $tight + 180;
   background-repeat: no-repeat;
 
   padding-top: 128px;
 
   &__title {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     h2 {
       font-size: 2.3em;
       font-weight: bold;
@@ -142,10 +142,10 @@ hr {
     input {
       width: 100%;
       background-image: url('./images/magnifying-glass.png');
-      background-position: 6px 8px;
+      background-position: 10px 12px;
       background-repeat: no-repeat;
       text-indent: 35px;
-      padding: 8px;
+      padding: 12px;
       border: 1px solid $c-light;
       transition: $transition;
 
@@ -171,7 +171,10 @@ hr {
     @media (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
     }
-
+    svg {
+      height: 50px;
+      margin-bottom: 32px;
+    }
   }
 
   &--quad {
@@ -268,7 +271,7 @@ hr {
 
   &__bottom {
     background-color: $c-dark;
-    padding: 64px 0;
+    padding: 64px 0 0;
     color: white;
   }
 
@@ -277,6 +280,13 @@ hr {
     padding: 48px 0 28px;
     @media (max-width: 768px) {
       flex-direction: column;
+      // padding: 28px 0 28px;
+    }
+
+    &--app-btns {
+      @media (max-width: 768px) {
+        padding-top: 0;
+      }
     }
     &:not(:last-child) {
       border-bottom: 1px solid #828282;
@@ -364,4 +374,17 @@ hr {
 
 .big-padding-bottom {
   padding-bottom: 90px;
+}
+
+
+.pr-links {
+  @media (max-width: 768px) {
+    margin-top: 16px;
+  }
+}
+
+.btn-image {
+  @media (max-width: 768px) {
+    max-width: 150px;
+  }
 }
