@@ -34,12 +34,19 @@ h2 {
   &-outline {
     border: 1px solid $c-dark;
   }
+  &-reverse {
+    border: 1px solid white;
+
+    &:hover {
+      color: white;
+    }
+  }
   &-danger {
     background-color: $c-red;
   }
   &-big {
     border-width: 2px;
-    padding: 16px 44px;
+    padding: 16px 44px !important;
   }
 }
 
@@ -78,6 +85,9 @@ hr {
 }
 
 .nav {
+  @media (max-width: 768px) {
+    display: none;
+  }
   ul {
     display: flex;
     align-items: center;
@@ -158,11 +168,17 @@ hr {
   display: grid;
   grid-gap: 16px;
   &--dual {
-    grid-template-columns: 1fr 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
   }
 
   &--quad {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
 
     .box {
       min-height: 300px;
@@ -250,6 +266,73 @@ hr {
     padding: 150px 0;
   }
 
+  &__bottom {
+    background-color: $c-dark;
+    padding: 64px 0;
+    color: white;
+  }
+
+  &__cols {
+    display: flex;
+    padding: 48px 0 28px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid #828282;
+    }
+
+    &--center {
+          align-items: center;
+    }
+
+  }
+
+  &__left {
+    @media (max-width: 768px) {
+      margin-bottom: 32px;
+    }
+    flex: 3;
+    position: relative;
+
+    .social-media {
+      position: absolute;
+      bottom: 0;
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        float: left;
+        list-style: none;
+      }
+      a {
+        color: white;
+        padding: 8px;
+      }
+      i, svg {
+        width: 16px;
+      }
+    }
+  }
+
+  &__right {
+    flex: 4;
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+    h5 {
+      margin-bottom: 24px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 2px 0;
+      display: block;
+    }
+  }
+
   &__socials {
     margin-top: 64px;
     a {
@@ -258,9 +341,27 @@ hr {
       color: $c-text;
       text-decoration: none;
     }
-    svg {
+    i {
       width: 25px;
       margin-right: 8px;
     }
   }
+}
+
+.btn-image {
+  @media (min-width: 768px) {
+    img {
+      height: 58px;
+    }
+  }
+
+    img {
+      width: 100%;
+    }
+
+}
+
+
+.big-padding-bottom {
+  padding-bottom: 90px;
 }
