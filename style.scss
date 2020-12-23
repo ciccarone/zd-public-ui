@@ -404,7 +404,7 @@ hr {
 
         color: $c-inactive;
         h3 {
-          font-size: .7em;
+          font-size: .8em;
           margin-bottom: 0;
         }
         &__icon {
@@ -453,7 +453,22 @@ hr {
 
 }
 
+.clicker {
+  text-decoration: none;
+  min-width: 50px;
+  display: flex;
+  justify-content: flex-start;
+  &:before {
+    content: "\f055";
+    font-family: "Font Awesome 5 Pro";
+    display: flex;
+    color: $c-text;
+  }
+
+}
+
 .paper {
+
 
   &__category {
     text-transform: uppercase;
@@ -461,5 +476,69 @@ hr {
     font-size: .7em;
     position: relative;
     top: -8px;
+  }
+
+  &__title {
+    margin-bottom: 1.1em;
+  }
+
+  &__sheet {
+    background-color: white;
+    padding: 2em;
+    box-shadow: 1px 2px 21px rgba(0, 0, 0, 0.05), 4px 3.4px 5px rgba(0, 0, 0, 0.12);
+    &__item {
+      display: flex;
+      border-bottom: 1px solid $c-light;
+      padding: 1.5em 0 .3em;
+      align-items: baseline;
+
+      &.active {
+        border-bottom: none;
+        .clicker {
+          &:before {
+            content: "\f056";
+            color: $c-red;
+          }
+        }
+        .content__title {
+          font-weight: bold;
+        }
+
+        .content__info {
+          display: block
+        }
+        .content__link {
+          display: flex;
+        }
+      }
+      .content {
+        &__info {
+          display: none;
+          margin-top: 1.9em;
+          line-height: 1.7em;
+        }
+
+        &__title {
+          font-size: 1.3em;
+        }
+        &__link {
+
+          &__href {
+            color: $c-inactive;
+          }
+          display: none;
+          margin-top: 1.9em;
+          margin-bottom: 1em;
+          align-items: center;
+
+          &:after {
+            content: "\f061";
+            font-family: "Font Awesome 5 Pro";
+            font-size: .6em;
+            margin-left: 6px;
+          }
+        }
+      }
+    }
   }
 }
