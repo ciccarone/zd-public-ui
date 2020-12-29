@@ -35,6 +35,11 @@ h2 {
 
   &-outline {
     border: 1px solid $c-dark;
+    &:hover {
+      background-color: $c-red;
+      color: white;
+      border-color: $c-red;
+    }
   }
   &-reverse {
     border: 1px solid white;
@@ -239,6 +244,7 @@ hr {
 
     &__link {
       bottom: 32px;
+      font-size: .9em;
       position: absolute;
     }
 
